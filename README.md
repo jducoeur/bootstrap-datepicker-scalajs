@@ -12,6 +12,7 @@ You will also need to add this line, or something like it, to your HTML, to pull
 ```
 <link rel="stylesheet" href="//cdn.jsdelivr.net/webjars/org.webjars/bootstrap-datepicker/1.4.0/css/bootstrap-datepicker3.min.css">
 ```
+Note that this facade assumes that your site is using Bootstrap for its UI. (If someone wants to fork a standalone variant, feel free.)
 
 ## bootstrap-datepicker
 

@@ -7,9 +7,9 @@ lazy val root = project.in(file(".")).
 
 name := "Scala.js facade for bootstrap-datepicker"
 
-normalizedName := "bootstrap-datepicker-scalajs"
+normalizedName := "bootstrap-datepicker-facade"
 
-version := "0.1-SNAPSHOT"
+version := "0.1"
 
 organization := "org.querki"
 

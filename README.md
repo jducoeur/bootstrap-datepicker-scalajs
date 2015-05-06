@@ -2,6 +2,10 @@
 
 A Scala.js facade for the bootstrap-datepicker library
 
+In HTML file, you need:
+```
+<link rel="stylesheet" href="//cdn.jsdelivr.net/webjars/org.webjars/bootstrap-datepicker/1.4.0/css/bootstrap-datepicker3.min.css")">
+```
 
 ### License
 

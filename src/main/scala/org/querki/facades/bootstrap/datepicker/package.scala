@@ -15,6 +15,6 @@ import org.querki.jquery.JQuery
  * useful.
  */
 package object datepicker {
-  implicit def jq2FileUpload(jq:JQuery):BootstrapDatepicker = jq.asInstanceOf[BootstrapDatepicker]
+  implicit def jq2Datepicker(jq:JQuery):BootstrapDatepicker = jq.asInstanceOf[BootstrapDatepicker]
   implicit def jq2DatepickerCommands(jq:JQuery) = new DatepickerCommands(jq)
 }

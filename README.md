@@ -32,6 +32,8 @@ To use the Datepicker, attach it to an element of the form:
 ```
 using Scala.js code along these lines (this example is from Querki):
 ```
+import org.querki.facades.bootstrap.datepicker._ // this adds '.datepicker' implicit
+
 val baseOpts = BootstrapDatepickerOptions.
   autoclose(true).
   todayHighlight(true).

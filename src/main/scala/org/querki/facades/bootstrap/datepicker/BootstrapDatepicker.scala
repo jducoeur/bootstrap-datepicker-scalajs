@@ -8,6 +8,7 @@ import js.JSConverters._
 import org.querki.jsext._
 import org.querki.jquery._
 
+@js.native
 trait BootstrapDatepicker extends js.Object {
   def datepicker(options:BootstrapDatepickerOptions):JQuery = js.native
   
@@ -64,12 +65,14 @@ class DatepickerCommands(dp:BootstrapDatepicker) {
  * According to the documentation, events defined on BootstrapDatepicker return this enhanced version
  * of JQueryEventObject. See http://bootstrap-datepicker.readthedocs.org/en/latest/events.html
  */
+@js.native
 trait DatepickerEventObject extends JQueryEventObject {
   def date:Date = js.native
   def dates:js.Array[Date] = js.native
   def format:js.Function2[UndefOr[Int], UndefOr[String], String] = js.native
 }
 
+@js.native
 trait BootstrapDatepickerOptions extends js.Object
 object BootstrapDatepickerOptions extends BootstrapDatepickerOptionBuilder(noOpts)
 

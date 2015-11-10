@@ -6,7 +6,7 @@ A Scala.js facade for the bootstrap-datepicker library
 
 To use bootstrap-datepicker from Scala.js, add this line to your build.sbt:
 ```
-"org.querki" %%% "bootstrap-datepicker-facade" % "0.3"
+"org.querki" %%% "bootstrap-datepicker-facade" % "0.4"
 ```
 You will also need to add this line, or something like it, to your HTML, to pull in the matching CSS code:
 ```

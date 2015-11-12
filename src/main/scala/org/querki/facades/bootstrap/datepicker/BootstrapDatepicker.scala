@@ -148,7 +148,7 @@ class BootstrapDatepickerOptionBuilder(val dict:OptMap) extends JSOptionBuilder[
   
   def toggleActive(v:Boolean) = jsOpt("toggleActive", v)
   
-  def weekStart(v:Int) = jsOpt("weekStart", v)
+  def weekStart(v:DayOfWeek) = jsOpt("weekStart", v.underlying)
 }
 
 case class DayOfWeek(val underlying:Int) extends AnyVal

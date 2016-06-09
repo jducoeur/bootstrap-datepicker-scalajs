@@ -5,7 +5,7 @@ name := "Scala.js facade for bootstrap-datepicker"
 
 normalizedName := "bootstrap-datepicker-facade"
 
-version := "0.6"
+version := "0.7"
 
 organization := "org.querki"
 
@@ -18,10 +18,6 @@ libraryDependencies ++= Seq(
   "org.scala-js" %%% "scalajs-dom" % "0.9.0",
   "org.querki" %%% "jquery-facade" % "1.0-RC6"
 )
-
-jsDependencies += "org.webjars" % "bootstrap" % "3.3.4" / "bootstrap.js" minified "bootstrap.min.js" dependsOn "jquery.js"
-
-jsDependencies += "org.webjars" % "bootstrap-datepicker" % "1.4.0" / "bootstrap-datepicker.js" minified "bootstrap-datepicker.min.js" dependsOn "bootstrap.js"
 
 jsDependencies in Test += RuntimeDOM
 

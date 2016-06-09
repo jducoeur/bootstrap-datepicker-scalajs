@@ -6,13 +6,20 @@ A Scala.js facade for the bootstrap-datepicker library
 
 To use bootstrap-datepicker from Scala.js, add this line to your build.sbt:
 ```
-"org.querki" %%% "bootstrap-datepicker-facade" % "0.6"
+"org.querki" %%% "bootstrap-datepicker-facade" % "0.7"
 ```
 You will also need to add this line, or something like it, to your HTML, to pull in the matching CSS code:
 ```
 <link rel="stylesheet" href="//cdn.jsdelivr.net/webjars/org.webjars/bootstrap-datepicker/1.4.0/css/bootstrap-datepicker3.min.css">
 ```
 Note that this facade assumes that your site is using Bootstrap for its UI. (If someone wants to fork a standalone variant, feel free.)
+
+Also, as of release 0.7, this facade no longer automatically imports its JavaScript dependencies. (This automatic import was convenient in principle, but meant that applications couldn't independently choose their JS library versions, which tends to lead to eviction warnings.) So you will also need to include something like the following in your build.sbt:
+```
+jsDependencies += "org.webjars" % "bootstrap" % "3.3.4" / "bootstrap.js" minified "bootstrap.min.js" dependsOn "jquery.js"
+jsDependencies += "org.webjars" % "bootstrap-datepicker" % "1.6.1" / "bootstrap-datepicker.js" minified "bootstrap-datepicker.min.js" dependsOn "bootstrap.js"
+```
+The exact versions and source chosen are up to you; these are what it is currently being tested against.
 
 ## bootstrap-datepicker
 

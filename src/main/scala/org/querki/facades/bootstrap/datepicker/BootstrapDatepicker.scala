@@ -9,7 +9,7 @@ import org.querki.jquery._
 
 @js.native
 trait BootstrapDatepicker extends js.Object {
-  def datepicker(options: BootstrapDatepickerOptions): JQuery = js.native
+  def datepicker(options: BootstrapDatepickerOptions = ???): JQuery = js.native
 
   /**
     * Underlying API to send commands to datepicker. Don't use this; use the methods in

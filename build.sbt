@@ -5,17 +5,17 @@ name := "Scala.js facade for bootstrap-datepicker"
 
 normalizedName := "bootstrap-datepicker-facade"
 
-version := "0.8"
+version := "0.9"
 
 organization := "org.querki"
 
-scalaVersion := "2.12.0"
+scalaVersion := "2.12.2"
 
-crossScalaVersions := Seq("2.10.5", "2.11.8", "2.12.0")
+crossScalaVersions := Seq("2.10.6", "2.11.11", "2.12.2")
 
 libraryDependencies ++= Seq(
   "org.querki" %%% "querki-jsext" % "0.8",
-  "org.scala-js" %%% "scalajs-dom" % "0.9.1",
+  "org.scala-js" %%% "scalajs-dom" % "0.9.3",
   "org.querki" %%% "jquery-facade" % "1.0"
 )
 

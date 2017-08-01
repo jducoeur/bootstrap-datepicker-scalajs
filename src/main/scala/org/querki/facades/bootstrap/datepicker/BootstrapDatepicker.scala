@@ -101,17 +101,19 @@ class BootstrapDatepickerOptionBuilder(val dict: OptMap) extends JSOptionBuilder
   // Options
   //
 
+  def assumeNearbyYear(v: Boolean | Int) = jsOpt("assumeNearbyYear", v)
+
   def autoclose(v: Boolean) = jsOpt("autoclose", v)
 
-  def beforeShowDay(v: Date | String) = jsOpt("beforeShowDay", v)
+  def beforeShowDay(v: BeforeShowFunc) = jsOpt("beforeShowDay", v)
 
-  def beforeShowMonth(v: Date | String) = jsOpt("beforeShowMonth", v)
+  def beforeShowMonth(v: BeforeShowFunc) = jsOpt("beforeShowMonth", v)
 
-  def beforeShowYear(v: Date | String) = jsOpt("beforeShowYear", v)
+  def beforeShowYear(v: BeforeShowFunc) = jsOpt("beforeShowYear", v)
 
-  def beforeShowDecade(v: Date | String) = jsOpt("beforeShowDecade", v)
+  def beforeShowDecade(v: BeforeShowFunc) = jsOpt("beforeShowDecade", v)
 
-  def beforeShowCentury(v: Date | String) = jsOpt("beforeShowCentury", v)
+  def beforeShowCentury(v: BeforeShowFunc) = jsOpt("beforeShowCentury", v)
 
   def calendarWeeks(v: Boolean) = jsOpt("calendarWeeks", v)
 
@@ -119,15 +121,14 @@ class BootstrapDatepickerOptionBuilder(val dict: OptMap) extends JSOptionBuilder
 
   def container(v: String) = jsOpt("container", v)
 
+  def datesDisabled(v: String) = jsOpt("datesDisabled", v)
+  def datesDisabled(v: js.Array[String]) = jsOpt("datesDisabled", v)
+
   def daysOfWeekDisabled(v: Seq[DayOfWeek]) = jsOpt("daysOfWeekDisabled", v.map(_.underlying).toJSArray)
 
   def daysOfWeekHighlighted(v: Seq[DayOfWeek]) = jsOpt("daysOfWeekHighlighted", v.map(_.underlying).toJSArray)
 
-  def datesDisabled(v: String) = jsOpt("datesDisabled", v)
-
-  def datesDisabled(v: js.Array[String]) = jsOpt("datesDisabled", v)
-
-  def defaultViewDate(v: js.Dictionary[Int]) = jsOpt("defaultViewDate", v)
+  def defaultViewDate(v: Date | String | js.Dictionary[Int]) = jsOpt("defaultViewDate", v)
 
   def disableTouchKeyboard(v: Boolean) = jsOpt("disableTouchKeyboard", v)
 
@@ -137,29 +138,31 @@ class BootstrapDatepickerOptionBuilder(val dict: OptMap) extends JSOptionBuilder
 
   def forceParse(v: Boolean) = jsOpt("forceParse", v)
 
-  def assumeNearbyYear(v: Boolean | Int) = jsOpt("assumeNearbyYear", v)
-
   def format(v: String) = jsOpt("format", v)
 
   def immediateUpdates(v: Boolean) = jsOpt("immediateUpdates", v)
 
   def inputs(v: js.Array[JQuery]) = jsOpt("inputs", v)
+  
+  def keepEmptyValues(v: Boolean) = jsOpt("keepEmptyValues", v)
 
   def keyboardNavigation(v: Boolean) = jsOpt("keyboardNavigation", v)
 
   def language(v: String) = jsOpt("language", v)
 
-  def minViewMode(v: ViewMode) = jsOpt("minViewMode", v.underlying)
-
   def maxViewMode(v: ViewMode) = jsOpt("maxViewMode", v.underlying)
+
+  def minViewMode(v: ViewMode) = jsOpt("minViewMode", v.underlying)
 
   def multidate(v: Boolean | Int) = jsOpt("multidate", v)
 
   def multidateSeparator(v: String) = jsOpt("multidateSeparator", v)
 
-  def orientation(v: Orientation*) = jsOpt("orientation", v.map(_.underlying).mkString(""))
+  def orientation(v: Orientation*) = jsOpt("orientation", v.map(_.underlying).mkString(" "))
 
   def showOnFocus(v: Boolean) = jsOpt("showOnFocus", v)
+  
+  def showWeekDays(v: Boolean) = jsOpt("showWeekDays", v)
 
   def startDate(v: Date | String) = jsOpt("startDate", v)
 
@@ -176,6 +179,8 @@ class BootstrapDatepickerOptionBuilder(val dict: OptMap) extends JSOptionBuilder
   def todayHighlight(v: Boolean) = jsOpt("todayHighlight", v)
 
   def toggleActive(v: Boolean) = jsOpt("toggleActive", v)
+  
+  def updateViewDate(v: Boolean) = jsOpt("updateViewDate", v)
 
   def weekStart(v: DayOfWeek) = jsOpt("weekStart", v.underlying)
 
